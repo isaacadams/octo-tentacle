@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+    tentacle:
+        build: "."
+        env_file: .env
+        restart: always
+        volumes:
+            - "./tentacle/home:/home/octopus/"
+            - "./tentacle/data:/etc/octopus/"
+        ports: 
+            - 10933:10933
